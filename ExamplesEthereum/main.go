@@ -3,15 +3,27 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/celo-org/celo-blockchain/ethclient"
+	//"github.com/ethereum/go-ethereum/ethclient"
 	"log"
 )
 
 func main() {
-	var ethereum_mainnet string = "https://mainnet.infura.io/v3/580f184f75ad452eb839aeeacb65b62f"
-	client, err := ethclient.Dial(ethereum_mainnet)
-	//var celo_url string = "https://alfajores-forno.celo-testnet.org/"
-	//client, err := ethclient.Dial(celo_url)
+	//var ethereum_mainnet string = put string from credentials.txt file
+	//client, err := ethclient.Dial(ethereum_mainnet)
+	//var celo_alfajores_url string = "https://alfajores-forno.celo-testnet.org/"
+	//client, err := ethclient.Dial(celo_alfajores_url)
+	//file, err := os.Open("./ExamplesEthereum/credentials.txt")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//b1 := make([]byte, 20)
+	//n1, err := file.Read(b1)
+	//fmt.Printf("%d bytes: %s\n", n1, string(b1[:n1]))
+	//fmt.Print(file)
+
+	var celo_forno_url string = "https://forno.celo.org/"
+	client, err := ethclient.Dial(celo_forno_url)
 	if err != nil {
 		log.Fatal(err)
 	}
