@@ -36,5 +36,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(header.Number.String()) // 5671744
+	fmt.Println("Latest block number: ", header.Number.String(), " for network ", celo_forno_url) // 5671744
 }
