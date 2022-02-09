@@ -38,6 +38,32 @@ func sliceCopy() {
 	fmt.Println(slice1, slice2)
 }
 
+func mapDemo() {
+	x := make(map[string]int)
+	x["key"] = 10
+	x["otroElemento"] = 15
+	fmt.Println(x)
+	elements := make(map[string]string)
+	elements["H"] = "Hydrogen"
+	elements["Li"] = "Lithium"
+	fmt.Println(elements["Li"])
+	elements2 := map[string]map[string]string{
+		"H": map[string]string{
+			"name":  "Hydrogen",
+			"state": "gas",
+		},
+	}
+	if ele, ok := elements2["H"]; ok {
+		fmt.Println(ele["name"], ele["state"])
+	}
+	if ele, ok := elements2["Li"]; ok {
+		fmt.Println(ele["name"], ele["state"])
+	} else {
+		fmt.Println("Element not found")
+	}
+
+}
+
 func main() {
 	var x [5]int
 	x[4] = 100
@@ -46,4 +72,5 @@ func main() {
 	averageTestScoreIdiomatic()
 	sliceAppend()
 	sliceCopy()
+	mapDemo()
 }
