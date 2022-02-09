@@ -38,6 +38,23 @@ func sliceCopy() {
 	fmt.Println(slice1, slice2)
 }
 
+func exercisesChap5() {
+	mySlice := make([]int, 3, 9)
+	fmt.Println(len(mySlice))
+	x := [6]string{"a", "b", "c", "d", "e", "f"}
+	fmt.Println(x[2:5])
+	numbersList := []int{
+		48, 96, 86, 68, 57, 82, 63, 70, 37, 34, 83, 27, 19, 97, 9, 17,
+	}
+	min := 90000
+	for _, elementNumbers := range numbersList {
+		if elementNumbers < min {
+			min = elementNumbers
+		}
+	}
+	fmt.Println("The minumum is: ", min)
+}
+
 func mapDemo() {
 	x := make(map[string]int)
 	x["key"] = 10
@@ -73,4 +90,5 @@ func main() {
 	sliceAppend()
 	sliceCopy()
 	mapDemo()
+	exercisesChap5()
 }
