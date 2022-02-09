@@ -65,7 +65,7 @@ func mapDemo() {
 	elements["Li"] = "Lithium"
 	fmt.Println(elements["Li"])
 	elements2 := map[string]map[string]string{
-		"H": map[string]string{
+		"H": {
 			"name":  "Hydrogen",
 			"state": "gas",
 		},
