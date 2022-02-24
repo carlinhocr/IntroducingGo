@@ -26,6 +26,20 @@ func makeEvenGenerator() func() uint {
 	}
 }
 
+func makeOddGenerator() func() uint {
+	i := uint(1)
+	return func() (ret uint) {
+		ret = i
+		i += 1
+		if i%2 == 0 {
+			i += 1
+		}
+		return
+
+		return
+	}
+}
+
 func panicTest() {
 	defer func() {
 		str := recover()
@@ -101,4 +115,8 @@ func main() {
 	fmt.Println("the half of 5, is:", result, "is it Even?", even)
 	maxlist := []int{1, 4, 56, 77, 99, 5, 44}
 	fmt.Println("Maximum of 1,4,56,77,99,5,44 is", max(maxlist...))
+	nextEven2 := makeOddGenerator()
+	fmt.Println("Next Odd Number", nextEven2())
+	fmt.Println("Next Odd Number", nextEven2())
+	fmt.Println("Next Odd Number", nextEven2())
 }
