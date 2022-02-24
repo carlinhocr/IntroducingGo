@@ -26,6 +26,16 @@ func makeEvenGenerator() func() uint {
 	}
 }
 
+func fibonacci(x int) int {
+	if x == 0 {
+		return 0
+	}
+	if x == 1 {
+		return 1
+	}
+	return fibonacci(x-1) + fibonacci(x-2)
+}
+
 func makeOddGenerator() func() uint {
 	i := uint(1)
 	return func() (ret uint) {
@@ -119,4 +129,9 @@ func main() {
 	fmt.Println("Next Odd Number", nextEven2())
 	fmt.Println("Next Odd Number", nextEven2())
 	fmt.Println("Next Odd Number", nextEven2())
+	fmt.Println("Finocacci 0", fibonacci(0))
+	fmt.Println("Finocacci 1", fibonacci(1))
+	fmt.Println("Finocacci 2", fibonacci(2))
+	fmt.Println("Finocacci 5", fibonacci(5))
+	fmt.Println("Finocacci 10", fibonacci(10))
 }
